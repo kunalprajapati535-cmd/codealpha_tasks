@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MiniSocial - a full-stack mini social media platform." />
+  <title>MiniSocial</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div id="toast" class="toast"></div>
+
+  <section id="authScreen" class="auth-screen">
+    <div class="auth-brand">
+      <div class="brand-mark">M</div>
+      <div>
+        <h1>MiniSocial</h1>
+        <p>Connect. Share. Discover.</p>
+      </div>
+    </div>
+
+    <div class="auth-card">
+      <div class="auth-tabs">
+        <button class="auth-tab active" data-auth-tab="login">Login</button>
+        <button class="auth-tab" data-auth-tab="register">Create account</button>
+      </div>
+
+      <form id="loginForm" class="auth-form">
+        <h2>Welcome back 👋</h2>
+        <p class="muted">Log in to continue to your feed.</p>
+        <label>Username<input name="username" autocomplete="username" required placeholder="e.g. demo"></label>
+        <label>Password<input name="password" type="password" autocomplete="current-password" required placeholder="••••••••"></label>
+        <button class="primary-btn full" type="submit">Login</button>
+        <p class="demo-hint">Demo: <b>demo</b> / <b>demo123</b></p>
+      </form>
+
+      <form id="registerForm" class="auth-form hidden">
+        <h2>Join MiniSocial 🚀</h2>
+        <p class="muted">Create an account and start posting.</p>
+        <label>Full name<input name="name" required maxlength="60" placeholder="Your name"></label>
+        <label>Username<input name="username" required minlength="3" maxlength="20" pattern="[A-Za-z0-9_]+" placeholder="your_username"></label>
+        <label>Password<input name="password" type="password" required minlength="6" placeholder="At least 6 characters"></label>
+        <button class="primary-btn full" type="submit">Create account</button>
+      </form>
+    </div>
+  </section>
+
+  <div id="app" class="app-shell hidden">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <button class="brand-button" id="homeBtn">
+          <span class="brand-mark small">M</span>
+          <span>MiniSocial</span>
+        </button>
+
+        <div class="top-search">
+          <span>⌕</span>
+          <input id="searchInput" placeholder="Search posts and people..." />
+        </div>
+
+        <nav>
+          <button class="nav-btn active" data-page="home">Home</button>
+          <button class="nav-btn" data-page="explore">Explore</button>
+          <button class="nav-btn" data-page="profile">Profile</button>
+        </nav>
+
+        <div class="user-menu">
+          <button id="topAvatar" class="avatar"></button>
+          <button id="logoutBtn" class="logout-btn">Logout</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="left-sidebar">
+        <div class="side-card profile-mini">
+          <button id="sidebarAvatar" class="avatar large"></button>
+          <div>
+            <strong id="sidebarName">User</strong>
+            <span id="sidebarUsername">@user</span>
+          </div>
+          <button id="sidebarProfileBtn" class="icon-btn" title="Open profile">→</button>
+        </div>
+
+        <div class="side-card">
+          <div class="side-title">Quick links</div>
+          <button class="side-link" data-page="home"><span>🏠</span> Home feed</button>
+          <button class="side-link" data-page="explore"><span>🔎</span> Explore people</button>
+          <button class="side-link" data-page="profile"><span>👤</span> My profile</button>
+        </div>
+
+        <div class="side-card task-card">
+          <div class="side-title">Project features</div>
+          <div class="feature"><span>✓</span> User profiles</div>
+          <div class="feature"><span>✓</span> Posts & comments</div>
+          <div class="feature"><span>✓</span> Like / follow system</div>
+          <div class="feature"><span>✓</span> Persistent SQLite data</div>
+        </div>
+      </aside>
+
+      <section class="content">
+        <div id="homePage" class="page">
+          <div class="page-heading">
+            <div>
+              <p class="eyebrow">YOUR FEED</p>
+              <h2>What's happening?</h2>
+            </div>
+          </div>
+
+          <form id="postForm" class="composer card">
+            <div class="composer-row">
+              <button type="button" id="composerAvatar" class="avatar"></button>
+              <textarea name="content" rows="3" maxlength="5000" placeholder="Share something with your community..." required></textarea>
+            </div>
+            <div class="composer-bottom">
+              <input name="image_url" type="url" placeholder="Optional image URL" />
+              <button class="primary-btn" type="submit">Post</button>
+            </div>
+          </form>
+
+          <div id="feed" class="feed"></div>
+        </div>
+
+        <div id="explorePage" class="page hidden">
+          <div class="page-heading">
+            <div>
+              <p class="eyebrow">DISCOVER</p>
+              <h2>Explore people</h2>
+            </div>
+          </div>
+          <div class="card explore-search">
+            <span>⌕</span>
+            <input id="peopleSearch" placeholder="Search by name or username..." />
+          </div>
+          <div id="usersGrid" class="users-grid"></div>
+        </div>
+
+        <div id="profilePage" class="page hidden">
+          <div id="profileHeader" class="profile-header card"></div>
+          <div class="profile-post-title">Recent posts</div>
+          <div id="profilePosts" class="feed"></div>
+        </div>
+      </section>
+
+      <aside class="right-sidebar">
+        <div class="side-card">
+          <div class="side-title">About MiniSocial</div>
+          <p class="about-copy">A full-stack social media app built with Express.js, SQLite and vanilla JavaScript.</p>
+          <div class="tech-pills">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Express</span><span>SQLite</span>
+          </div>
+        </div>
+        <div class="side-card">
+          <div class="side-title">Demo users</div>
+          <div class="demo-user"><span class="avatar mini">D</span><div><b>@demo</b><small>Demo User</small></div></div>
+          <div class="demo-user"><span class="avatar mini">A</span><div><b>@alex</b><small>Alex Johnson</small></div></div>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <div id="editModal" class="modal hidden">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Edit profile</h3>
+        <button class="icon-btn" data-close-modal>×</button>
+      </div>
+      <form id="editProfileForm">
+        <label>Name<input name="name" maxlength="60" required /></label>
+        <label>Bio<textarea name="bio" maxlength="200" rows="4" placeholder="Tell people about yourself..."></textarea></label>
+        <label>Avatar URL<input name="avatar" type="url" placeholder="https://..."></label>
+        <button class="primary-btn full" type="submit">Save changes</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Cart — Fieldstone Goods</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="brand"><span class="mark"></span>Fieldstone Goods</a>
+    <nav class="main-nav">
+      <a href="/">Shop</a>
+      <a href="/orders.html">Orders</a>
+      <span data-account-slot></span>
+      <a href="/cart.html" class="nav-cart active">Cart <span class="cart-count" data-cart-count>0</span></a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <h1 style="font-family: var(--display); font-size: 30px; margin: 40px 0 0;">Your Cart</h1>
+
+  <div class="cart-layout">
+    <div data-cart-items>
+      <p style="color: var(--slate); padding: 24px 0;">Loading…</p>
+    </div>
+
+    <div class="summary-card">
+      <h3>Order Summary</h3>
+      <div class="summary-row"><span>Items</span><span data-summary-count>0</span></div>
+      <div class="summary-row total"><span>Total</span><span data-summary-total>$0.00</span></div>
+
+      <form data-checkout-form style="margin-top: 22px;">
+        <div class="form-error" data-checkout-error></div>
+        <div class="field">
+          <label for="shipping">Shipping address</label>
+          <textarea id="shipping" name="shipping" rows="3" placeholder="123 Fieldstone Rd, Millbrook, NY"></textarea>
+        </div>
+        <button type="submit" class="btn block" data-checkout-btn>Place order</button>
+      </form>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container" style="display:flex; justify-content:space-between; width:100%;">
+    <span>Fieldstone Goods</span>
+    <span>Built for the long haul.</span>
+  </div>
+</footer>
+
+<script src="/js/common.js"></script>
+<script src="/js/cart.js"></script>
+</body>
+</html>

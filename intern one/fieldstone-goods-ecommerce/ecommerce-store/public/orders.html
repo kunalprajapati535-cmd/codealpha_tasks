@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Orders — Fieldstone Goods</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="brand"><span class="mark"></span>Fieldstone Goods</a>
+    <nav class="main-nav">
+      <a href="/">Shop</a>
+      <a href="/orders.html" class="active">Orders</a>
+      <span data-account-slot></span>
+      <a href="/cart.html" class="nav-cart">Cart <span class="cart-count" data-cart-count>0</span></a>
+    </nav>
+  </div>
+</header>
+
+<main class="container orders-list">
+  <h1 style="font-family: var(--display); font-size: 30px; margin: 40px 0 0;">Your Orders</h1>
+  <div data-orders-root style="margin-top: 24px;">
+    <p style="color: var(--slate);">Loading…</p>
+  </div>
+</main>
+
+<script src="/js/common.js"></script>
+<script src="/js/orders.js"></script>
+</body>
+</html>

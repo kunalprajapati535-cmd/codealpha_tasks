@@ -1,0 +1,16 @@
+{
+  "name": "mini-social-media-platform",
+  "version": "1.0.0",
+  "description": "Mini social media platform built with HTML, CSS, JavaScript, Express.js and SQLite.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^11.10.0",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2"
+  }
+}

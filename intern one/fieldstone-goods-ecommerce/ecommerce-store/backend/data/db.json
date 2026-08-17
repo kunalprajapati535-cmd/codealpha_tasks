@@ -1,0 +1,86 @@
+{
+  "users": [],
+  "products": [
+    {
+      "id": "p1",
+      "name": "Cast Iron Skillet",
+      "category": "Kitchen",
+      "price": 42.00,
+      "stock": 18,
+      "description": "A 10-inch pre-seasoned cast iron skillet, hand-poured and finished for a naturally non-stick surface that improves with every use.",
+      "image": "skillet",
+      "color": "#5B6670"
+    },
+    {
+      "id": "p2",
+      "name": "Waxed Canvas Apron",
+      "category": "Workshop",
+      "price": 58.00,
+      "stock": 24,
+      "description": "Full-length waxed canvas apron with a brass buckle and three tool pockets. Built to soften and darken with age, never to wear out.",
+      "image": "apron",
+      "color": "#A24936"
+    },
+    {
+      "id": "p3",
+      "name": "Oak Cutting Board",
+      "category": "Kitchen",
+      "price": 36.00,
+      "stock": 30,
+      "description": "Edge-grain white oak board, finished with food-safe mineral oil. Every board carries the grain pattern of its own tree.",
+      "image": "board",
+      "color": "#B08D57"
+    },
+    {
+      "id": "p4",
+      "name": "Brass Measuring Set",
+      "category": "Kitchen",
+      "price": 28.00,
+      "stock": 40,
+      "description": "Set of four nesting brass measuring cups, stamped with fraction markings and hung on a leather loop for easy storage.",
+      "image": "measuring",
+      "color": "#B08D57"
+    },
+    {
+      "id": "p5",
+      "name": "Wool Work Blanket",
+      "category": "Home",
+      "price": 76.00,
+      "stock": 15,
+      "description": "A dense, weatherproof wool blanket woven in a traditional buffalo check. Equally at home on a porch or in a truck bed.",
+      "image": "blanket",
+      "color": "#1B2430"
+    },
+    {
+      "id": "p6",
+      "name": "Hand Forged Trowel",
+      "category": "Garden",
+      "price": 32.00,
+      "stock": 22,
+      "description": "Single-piece forged steel trowel with a hickory handle. Balanced for hours of use without fatigue.",
+      "image": "trowel",
+      "color": "#5B6670"
+    },
+    {
+      "id": "p7",
+      "name": "Linen Tea Towels (Set of 3)",
+      "category": "Kitchen",
+      "price": 24.00,
+      "stock": 50,
+      "description": "Stonewashed linen towels that get softer and more absorbent with every wash. Undyed, edge-stitched, made to last decades.",
+      "image": "towels",
+      "color": "#EFEAE0"
+    },
+    {
+      "id": "p8",
+      "name": "Ceramic Storage Jar",
+      "category": "Home",
+      "price": 34.00,
+      "stock": 27,
+      "description": "Wheel-thrown stoneware jar with an airtight cork lid, glazed in a matte slate finish. Holds just over a liter.",
+      "image": "jar",
+      "color": "#5B6670"
+    }
+  ],
+  "orders": []
+}
